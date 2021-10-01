@@ -1,0 +1,8 @@
+<h3>Usuario: {{request.session.logged_username}}</h3>
+
+
+{% if request.session.logged_username %}
+
+<a href= "/logout">Log Out</a>
+
+{% endif %}
