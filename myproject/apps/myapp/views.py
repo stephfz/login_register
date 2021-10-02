@@ -17,10 +17,9 @@ def login(request):
     formLogin = LoginForm(request.POST or None)
     if request.method == "POST":
         if formLogin.is_valid():
-            logged_user = formLogin.login()
-            if logged_user != None:
-                request.session['logged_username'] = logged_user.name
-                return redirect('/home')      
+            # if logged_user != None:
+            #     request.session['logged_username'] = logged_user.name
+            return redirect('/home')      
     return render(request, 'login.html', {'formLogin':formLogin})
 
 def register(request):
